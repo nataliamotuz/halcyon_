@@ -1,0 +1,253 @@
+@import url(normalize.css);
+@font-face {
+  font-family: 'Gotham Rounded MediumItalic';
+  src: url("../assets/fonts/GothamRounded-MediumItalic.eot");
+  src: url("../assets/fonts/") format("embedded-opentype"), url("../assets/fonts/GothamRounded-MediumItalic.woff2") format("woff2"), url("../assets/fonts/GothamRounded-MediumItalic.woff") format("woff"), url("../assets/fonts/GothamRounded-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Gotham Rounded Book';
+  src: url("../assets/fonts/GothamRounded-Book.eot");
+  src: url("../assets/fonts/GothamRounded-Book.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/GothamRounded-Book.woff2") format("woff2"), url("../assets/fonts/GothamRounded-Book.woff") format("woff"), url("../assets/fonts/GothamRounded-Book.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Gotham Rounded Medium';
+  src: url("../assets/fonts/GothamRounded-Medium.eot");
+  src: url("../assets/fonts/GothamRounded-Medium.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/GothamRounded-Medium.woff2") format("woff2"), url("../assets/fonts/GothamRounded-Medium.woff") format("woff"), url("../assets/fonts/GothamRounded-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Gotham Rounded BookItalic';
+  src: url("../assets/fonts/GothamRounded-BookItalic.eot");
+  src: url("../assets/fonts/GothamRounded-BookItalic.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/GothamRounded-BookItalic.woff2") format("woff2"), url("../assets/fonts/GothamRounded-BookItalic.woff") format("woff"), url("../assets/fonts/GothamRounded-BookItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Myriad Pro Regular';
+  src: url("../assets/fonts/MyriadPro-Regular.eot");
+  src: url("../assets/fonts/MyriadPro-Regular.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/MyriadPro-Regular.woff2") format("woff2"), url("../assets/fonts/MyriadPro-Regular.woff") format("woff"), url("../assets/fonts/MyriadPro-Regular.ttf") format("truetype"), url("../assets/fonts/MyriadPro-Regular.svg#MyriadPro-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+body {
+  font-family: 'Gotham Rounded Medium', sans-serif;
+  color: #8c9398;
+  background-color: #ffffff;
+  overflow-x: hidden; }
+
+p {
+  margin: 0; }
+
+.container {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box; }
+
+.button {
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Gotham Rounded Medium', sans-serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  background-color: #3dc9b3;
+  padding: 22px 40px;
+  border-radius: 5px;
+  box-shadow: 0 3px 0 #309383;
+  margin: 50px 0 260px;
+  cursor: pointer;
+  transition: 0.5s; }
+
+.button:hover {
+  background-color: #29ad97; }
+
+.button:active {
+  box-shadow: none;
+  border-color: #309383;
+  background-color: #309383; }
+
+.bars {
+  margin-top: 50px;
+  color: #353535; }
+
+h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 12px;
+  margin-top: 120px; }
+
+h1 span:first-child {
+  color: #353535; }
+
+.jumbotron {
+  background-image: url("../assets/img/hero@1X.jpg");
+  background-size: cover; }
+
+.jumbotron .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; }
+
+.description {
+  font-size: 15px;
+  letter-spacing: 2px;
+  margin-top: 30px; }
+  .description span {
+    font-family: 'Gotham Rounded BookItalic', sans-serif;
+    font-weight: bold;
+    color: #353535; }
+
+.creative-portfolio {
+  background-color: #F3F5F8; }
+  .creative-portfolio .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+
+h2 {
+  font-family: 'Gotham Rounded Medium', sans-serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #353535;
+  padding-top: 95px;
+  padding-bottom: 5px; }
+
+.creative-portfolio-content {
+  width: 730px;
+  text-align: center;
+  line-height: 30px;
+  font-family: 'Gotham Rounded Medium', sans-serif;
+  padding-bottom: 105px; }
+  .creative-portfolio-content span {
+    color: #353535; }
+
+.decoration {
+  padding-bottom: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 560px; }
+  .decoration img:nth-child(2) {
+    margin: 5px 20px 0; }
+
+.love-what-u-do .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.love-what-u-do .love-what-you-do-content {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+h3 {
+  font-family: 'Gotham Rounded Medium', sans-serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #353535;
+  padding-top: 31px; }
+
+.icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 151px;
+  height: 151px;
+  background-color: #3EC9B3;
+  border-radius: 50%; }
+  .icon-wrapper i {
+    color: #ffffff; }
+
+.love-what-you-do-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Gotham Rounded Book', sans-serif;
+  padding-top: 40px;
+  padding-bottom: 100px; }
+  .love-what-you-do-container hr {
+    border: none;
+    width: 33px;
+    height: 2px;
+    background-color: #3EC9B3;
+    margin-bottom: 30px; }
+  .love-what-you-do-container p {
+    line-height: 20px;
+    padding: 0 15px;
+    text-align: center;
+    margin: 0; }
+
+.wr-99-problem {
+  background-image: url("../assets/img/flower@1X.jpg");
+  background-size: cover;
+  background-color: #242830;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding-top: 78px;
+  padding-bottom: 130px; }
+  .wr-99-problem .container {
+    position: relative; }
+    .wr-99-problem .container p {
+      font-family: 'Gotham Rounded Book', sans-serif;
+      color: #ffffff;
+      text-align: center;
+      text-transform: uppercase;
+      padding-bottom: 15px; }
+    .wr-99-problem .container p:first-child {
+      font-size: 40px;
+      letter-spacing: 10px; }
+    .wr-99-problem .container p + p {
+      font-size: 25px;
+      letter-spacing: 8px; }
+      .wr-99-problem .container p + p span {
+        font-style: italic; }
+    .wr-99-problem .container .smooth-scrolling {
+      position: absolute;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      text-decoration: none;
+      text-align: center;
+      line-height: 44px;
+      color: #ffffff;
+      background-color: #3dc9b3;
+      cursor: pointer;
+      bottom: -65px;
+      left: 50%; }
+
+.wr-ignite-your-passion {
+  padding-top: 64px;
+  padding-bottom: 59px;
+  background-color: #242830; }
+  .wr-ignite-your-passion .container {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .wr-ignite-your-passion .container a {
+      font-size: 15px;
+      color: #ffffff;
+      padding: 32px 42px 25px;
+      border: 1px solid #ffffff;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 2px;
+      transition: 0.5s; }
+    .wr-ignite-your-passion .container a:hover {
+      border: none;
+      background-color: #3dc9b3; }

@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'Gotham Rounded MediumItalic';
+    src: url('../assets/fonts/GothamRounded-MediumItalic.eot');
+    src: url('../assets/fonts/') format('embedded-opentype'), url('../assets/fonts/GothamRounded-MediumItalic.woff2') format('woff2'), url('../assets/fonts/GothamRounded-MediumItalic.woff') format('woff'), url('../assets/fonts/GothamRounded-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gotham Rounded Book';
+    src: url('../assets/fonts/GothamRounded-Book.eot');
+    src: url('../assets/fonts/GothamRounded-Book.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/GothamRounded-Book.woff2') format('woff2'), url('../assets/fonts/GothamRounded-Book.woff') format('woff'), url('../assets/fonts/GothamRounded-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Rounded Medium';
+    src: url('../assets/fonts/GothamRounded-Medium.eot');
+    src: url('../assets/fonts/GothamRounded-Medium.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/GothamRounded-Medium.woff2') format('woff2'), url('../assets/fonts/GothamRounded-Medium.woff') format('woff'), url('../assets/fonts/GothamRounded-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Rounded BookItalic';
+    src: url('../assets/fonts/GothamRounded-BookItalic.eot');
+    src: url('../assets/fonts/GothamRounded-BookItalic.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/GothamRounded-BookItalic.woff2') format('woff2'), url('../assets/fonts/GothamRounded-BookItalic.woff') format('woff'), url('../assets/fonts/GothamRounded-BookItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Myriad Pro Regular';
+    src: url('../assets/fonts/MyriadPro-Regular.eot');
+    src: url('../assets/fonts/MyriadPro-Regular.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/MyriadPro-Regular.woff2') format('woff2'), url('../assets/fonts/MyriadPro-Regular.woff') format('woff'), url('../assets/fonts/MyriadPro-Regular.ttf') format('truetype'), url('../assets/fonts/MyriadPro-Regular.svg#MyriadPro-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+p {
+    font-family: 'Gotham Rounded Medium', 'Gotham Rounded Book', 'Myriad Pro Regular';
+    font-size: 20px;
+    color: rgb(53, 53, 53);
+}
