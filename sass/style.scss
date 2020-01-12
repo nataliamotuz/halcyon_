@@ -41,7 +41,14 @@
 }
 
 // variables
-$color: #353535;
+$color-dark: #353535;
+$color-light: #8c9398;
+$bg-color-dark: #242830;
+$bg-color-grey: #f3f5f8;
+$color-accent: #3dc9b3;
+
+$mobile: 375px;
+$tablet: 1024px;
 
 // mixins
 
@@ -54,19 +61,17 @@ $color: #353535;
 
 @mixin flex-row () {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
 body {
     font-family: 'Gotham Rounded Medium', sans-serif;
-    color: #8c9398;
-    background-color: #ffffff;
+    color: $color-light;
+    background-color: #fff;
     overflow-x: hidden;
-}
-
-p {
-    margin: 0;
+    min-height: 100%;
 }
 
 .container {
@@ -77,257 +82,489 @@ p {
     box-sizing: border-box;
 }
 
+p {
+    margin: 0;
+}
+
+// HERO
+
+.wr-hero {
+    background-image: url('../assets/img/hero@1X.jpg');
+    background-size: cover;
+    height: 100vh;
+
+    & .container {
+        & .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 23vh;
+        }
+    }
+}
+
+h1 {
+    font-family: 'Gotham Rounded Book', 'Myriad Pro Regular', sans-serif;
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 12px;
+    line-height: 1;
+    margin-bottom: 17px;
+
+    & span:first-child {
+        color: $color-dark;
+    }
+
+}
+
+.description {
+    font-family: 'Gotham Rounded Book', 'Myriad Pro Regular', sans-serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
 .button {
+    font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
+    font-size: 15px;
+    color: #fff;
+    background-color: $color-accent;
     text-decoration: none;
     text-transform: uppercase;
     text-align: center;
-    color: #ffffff;
-    font-family: 'Gotham Rounded Medium', sans-serif;
-    font-size: 15px;
     letter-spacing: 2px;
-    background-color: #3dc9b3;
-    padding: 22px 40px;
+    padding: 23px 40px;
     border-radius: 5px;
     box-shadow: 0 3px 0 #309383;
     margin: 50px 0 260px;
-    cursor: pointer;
     transition: 0.5s;
 }
 
 .button:hover {
     background-color: #29ad97;
-} 
+}
 
 .button:active {
-    box-shadow: none; 
-    border-color:#309383;
-    background-color:#309383;
+    background-color: #309383;
+    box-shadow: none;
+    border-color: #309383;
 }
+
 .bars {
-  margin-top: 50px;
-  color: $color;
-} 
-
-h1 {
-    font-size: 40px;
-    text-transform: uppercase;
-    letter-spacing: 12px;
-    margin-top: 120px;
+    position: absolute;
+    right: 130px;
+    top: 60px;
+    color: $color-dark;
 }
 
-h1 {
-    & span:first-child {
-        color: $color;
-    }
-}
-.jumbotron {
- background-image: url('../assets/img/hero@1X.jpg');
- background-size: cover;
-}
+// INTRO
 
-.jumbotron .container {
-    @include flex-column();
-    height: 100vh;
-}
-
-.description {
-font-size: 15px;
-letter-spacing: 2px;
-margin-top: 30px;
-
-& span {
-    font-family: 'Gotham Rounded BookItalic', sans-serif;
-    font-weight: bold;
-    color: $color;
-}
-}
-
-// a creative portfolio template
-
-.creative-portfolio { 
-    background-color: #F3F5F8;
+.wr-intro {
+    background-color: $bg-color-grey;
+    padding-top: 95px;
+    padding-bottom: 120px;
 
     & .container {
-        @include flex-column ();
+        & .intro {
+            @include flex-column ();
+
+            & .intro-content {
+                font-family: 'Gotham Rounded Book', 'Myriad Pro Regular', sans-serif;
+                text-align: center;
+                line-height: 30px;
+                max-width: 790px;
+
+                & span {
+                    color: $color-dark;
+                }
+            }
+        }
     }
 }
 
 h2 {
-    font-family: 'Gotham Rounded Medium', sans-serif;
+    font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
     font-size: 15px;
+    font-weight: 400;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: $color;
-    padding-top: 95px;
-    padding-bottom: 5px;
-
+    color: $color-dark;
+    margin-bottom: 16px;
 }
- .creative-portfolio-content {
-     width: 730px;
-     text-align: center;
-     line-height: 30px;
-     font-family: 'Gotham Rounded Medium', sans-serif;
-     padding-bottom: 105px;
-     & span {
-        color: $color;
-     }
- }
 
 .decoration {
-    padding-bottom: 48px;
+    margin-bottom: 60px;
     @include flex-row ();
     width: 560px;
+
     & img:nth-child(2) {
-      margin: 5px 20px 0;
-}
-}
-
-// LOVE WHAT YOU DO, AND YOU'LL DO IT WELL
-
-.love-what-u-do {
-    & .container {
-        @include flex-column (); 
+        margin: 5px 34px 0;
     }
-    & .love-what-you-do-content {
+}
+
+// FEATURES
+
+.wr-features {
+    padding-top: 90px;
+    padding-bottom: 100px;
+
+    & .features {
+        @include flex-column ();
+
+        & .decoration {
+            margin-bottom: 86px;
+        }
+    }
+
+    & .features-content {
         @include flex-row ();
+
+        @media screen and (max-width: $tablet) {
+            @include flex-column();
+
+            & .features-content-container {
+                padding-bottom: 30px;
+            }
+        }
     }
 }
 
 h3 {
-    font-family: 'Gotham Rounded Medium', sans-serif;
+    position: relative;
+    font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
     font-size: 15px;
+    font-weight: 400;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: $color;
-    padding-top: 31px;
+    color: $color-dark;
+    margin-bottom: 55px;
+}
+
+h3::before {
+    content: '';
+    position: absolute;
+    left: 40%;
+    bottom: -26px;
+    width: 30px;
+    height: 10px;
+    border-bottom: 4px solid $color-accent;
+
 }
 
 .icon-wrapper {
     @include flex-column ();
     width: 151px;
     height: 151px;
-    background-color: #3EC9B3;
+    background-color: $color-accent;
     border-radius: 50%;
+    margin-bottom: 35px;
 
     & i {
-        color: #ffffff;
+        color: #fff;
     }
 }
-.love-what-you-do-container {
+
+.features-content-container {
     @include flex-column ();
-    font-family: 'Gotham Rounded Book', sans-serif;
-    padding-top: 40px;
-    padding-bottom: 100px;
-    
-    & hr {
-        border: none;
-        width: 33px;
-        height: 2px;
-        background-color: #3EC9B3;
-        margin-bottom: 30px;
-    }
 
     & p {
+        font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
         line-height: 20px;
-        padding: 0 15px;
+        padding: 0 14px;
         text-align: center;
         margin: 0;
     }
 }
 
-//responsive design specialist
+// ADVANTAGES
 
-// .wr-responsive-design {
-//     background-image: url('../assets/img/iPhone\ 5S@1X.png');
-//     background-size: cover;
-//    }
+.wr-advantages {
+    background-image: url('../assets/img/iPhone_5S@1X.png');
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position-x: 30%;
 
-// .slick-slider{
-//     @include flex-column ();
-//     background-color: red;
+    & .container {
+        max-width: 100%;
 
-//     & p {
-//       font-family: 'Gotham Rounded Book', sans-serif;
-//       line-height: 20px;
-//       width: 455px;
-//       padding-bottom: 10px;
-//       margin: 0;
-//     }
-// }
+        @media screen and (max-width: $tablet) {
+            padding: 0;
+        }
 
-// 99 problem 
+        & .iphone5 {
+            width: 46%;
+            display: inline-block;
 
-.wr-99-problem {
+            @media screen and (max-width: $mobile) {
+                display: none;
+            }
+        }
+
+        & .slider-iphone {
+            padding: 125px 360px 233px 107px;
+
+            @media screen and (max-width: $tablet) {
+                padding: 0 30px 150px;
+            }
+        }
+    }
+}
+
+
+
+.wr-slider {
+    width: 54%;
+    display: inline-block;
+    background-color: #fff;
+    position: relative;
+
+    & .slide {
+        @include flex-column ();
+
+        & p {
+            font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: justify;
+            padding-bottom: 10px;
+            margin: 0;
+        }
+    }
+
+    & .slick-dots {
+        width: 50%;
+        bottom: 128px;
+
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+            bottom: 0;
+        }
+    }
+
+    & .slick-dotted.slick-slider {
+        margin-bottom: 0;
+    }
+
+    @media screen and (max-width: $tablet) {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+.slick-dots li button:before {
+    content: '';
+    border: 2px solid $color-light;
+    border-radius: 100%;
+    width: 10px;
+    height: 10px;
+}
+
+.slick-dots li.slick-active button:before {
+    background-color: #000;
+}
+
+// QUOTE
+
+.wr-quote {
     background-image: url('../assets/img/flower@1X.jpg');
     background-size: cover;
-    background-color: #242830;
     background-position: center center;
     background-repeat: no-repeat;
-    padding-top: 78px;
-	padding-bottom: 130px;
+    padding-top: 25px;
+    padding-bottom: 50px;
+    position: relative;
 
+    & .container {
+        text-align: center;
 
-    & .container{
-        position: relative;
-        & p {
+        & h4 {
             font-family: 'Gotham Rounded Book', sans-serif;
-            color: #ffffff;
-            text-align: center;
+            color: #fff;
             text-transform: uppercase;
-            padding-bottom: 15px;  
-        }
-        & p:first-child {
             font-size: 40px;
             letter-spacing: 10px;
+            margin-bottom: 36px;
         }
 
-        & p + p {
+        & span {
             font-size: 25px;
             letter-spacing: 8px;
-
-            & span {
-                font-style: italic;
-            } 
         }
 
         .smooth-scrolling {
-            position: absolute;
+            display: inline-block;
             width: 44px;
             height: 44px;
             border-radius: 50%;
             text-decoration: none;
-            text-align: center;
             line-height: 44px;
-            color: #ffffff;
-            background-color: #3dc9b3;
-            cursor: pointer;
-  	        bottom: -65px;
-            left: 50%;
+            color: #fff;
+            background-color: $color-accent;
         }
     }
-}
-// ignite your passion
 
-.wr-ignite-your-passion {
+    &::before {
+        content: " ";
+        position: absolute;
+        background: $bg-color-dark;
+        opacity: 0.2;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 5;
+    }
+
+}
+
+// SERVISES
+
+.dog-content {
+    text-align: center;
+
+    & p {
+        font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        padding: 0 9px;
+    }
+
+    & img {
+        display: inline-block;
+        width: 360px;
+        height: 200px;
+        margin-bottom: 24px;
+    }
+
+    & h3 {
+        margin-bottom: 50px;
+    }
+
+    & h3:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -15px;
+        width: 30px;
+        height: 10px;
+        border-bottom: 3px solid $color-accent;
+    }
+}
+
+.dog-slider {
+    position: relative;
+    padding-top: 105px;
+    padding-bottom: 155px;
+
+    & .slick-dots {
+        bottom: 70px;
+    }
+}
+
+// MARKETING
+
+.wr-marketing {
     padding-top: 64px;
     padding-bottom: 59px;
-    background-color: #242830;
+    background-color: $bg-color-dark;
 
     & .container {
         @include flex-row();
+
         & a {
             font-size: 15px;
-            color: #ffffff;
+            color: #fff;
             padding: 32px 42px 25px;
-            border: 1px solid #ffffff;
+            border: 1px solid #fff;
             text-transform: uppercase;
             text-decoration: none;
             letter-spacing: 2px;
             transition: 0.5s;
         }
+
         & a:hover {
-            border: none;
-            background-color: #3dc9b3;
-           } 
+            border: 1px solid $color-accent;
+            background-color: $color-accent;
+            transition: 0.5s;
+        }
+    }
+}
+
+// SUBSCRIBE
+
+.wr-subscribe {
+    padding-top: 120px;
+    padding-bottom: 154px;
+    background-color: $bg-color-dark;
+    background-image: url('../assets/img/keyboard@1X.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    & .container {
+        position: relative;
+
+        & .form {
+            @include flex-column();
+
+            & i {
+                color: #fff;
+            }
+
+            & h3 {
+                color: #fff;
+                margin-bottom: 43px;
+            }
+
+            & h3::before {
+                display: none;
+            }
+        }
+
+        & input {
+            padding: 22px;
+            width: 345px;
+            margin-right: 5px;
+            text-align: center;
+            font-family: 'Gotham Rounded MediumItalic', sans-serif;
+            font-size: 15px;
+            letter-spacing: 2px;
+            background-color: transparent;
+            color: #fff;
+            border: 1px solid #fff;
+            border-radius: 1px;
+            outline: none;
+        }
+
+        & form {
+            & button.button {
+                border: none;
+                box-shadow: none;
+                padding: 23px 22px;
+                border-radius: 1px;
+                margin: 0;
+            }
+        }
+    }
+
+}
+
+// waypoints
+
+.hidden {
+    opacity: 0;
+}
+
+.fade-in {
+    animation: fadeIn ease 3s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }

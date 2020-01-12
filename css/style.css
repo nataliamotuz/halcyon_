@@ -37,11 +37,9 @@
 body {
   font-family: 'Gotham Rounded Medium', sans-serif;
   color: #8c9398;
-  background-color: #ffffff;
-  overflow-x: hidden; }
-
-p {
-  margin: 0; }
+  background-color: #fff;
+  overflow-x: hidden;
+  min-height: 100%; }
 
 .container {
   max-width: 1170px;
@@ -50,116 +48,142 @@ p {
   padding: 0 15px;
   box-sizing: border-box; }
 
+p {
+  margin: 0; }
+
+.wr-hero {
+  background-image: url("../assets/img/hero@1X.jpg");
+  background-size: cover;
+  height: 100vh; }
+  .wr-hero .container .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 23vh; }
+
+h1 {
+  font-family: 'Gotham Rounded Book', 'Myriad Pro Regular', sans-serif;
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 12px;
+  line-height: 1;
+  margin-bottom: 17px; }
+  h1 span:first-child {
+    color: #353535; }
+
+.description {
+  font-family: 'Gotham Rounded Book', 'Myriad Pro Regular', sans-serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  margin-bottom: 16px; }
+
 .button {
+  font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
+  font-size: 15px;
+  color: #fff;
+  background-color: #3dc9b3;
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
-  color: #ffffff;
-  font-family: 'Gotham Rounded Medium', sans-serif;
-  font-size: 15px;
   letter-spacing: 2px;
-  background-color: #3dc9b3;
-  padding: 22px 40px;
+  padding: 23px 40px;
   border-radius: 5px;
   box-shadow: 0 3px 0 #309383;
   margin: 50px 0 260px;
-  cursor: pointer;
   transition: 0.5s; }
 
 .button:hover {
   background-color: #29ad97; }
 
 .button:active {
+  background-color: #309383;
   box-shadow: none;
-  border-color: #309383;
-  background-color: #309383; }
+  border-color: #309383; }
 
 .bars {
-  margin-top: 50px;
+  position: absolute;
+  right: 130px;
+  top: 60px;
   color: #353535; }
 
-h1 {
-  font-size: 40px;
-  text-transform: uppercase;
-  letter-spacing: 12px;
-  margin-top: 120px; }
-
-h1 span:first-child {
-  color: #353535; }
-
-.jumbotron {
-  background-image: url("../assets/img/hero@1X.jpg");
-  background-size: cover; }
-
-.jumbotron .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; }
-
-.description {
-  font-size: 15px;
-  letter-spacing: 2px;
-  margin-top: 30px; }
-  .description span {
-    font-family: 'Gotham Rounded BookItalic', sans-serif;
-    font-weight: bold;
-    color: #353535; }
-
-.creative-portfolio {
-  background-color: #F3F5F8; }
-  .creative-portfolio .container {
+.wr-intro {
+  background-color: #f3f5f8;
+  padding-top: 95px;
+  padding-bottom: 120px; }
+  .wr-intro .container .intro {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; }
+    .wr-intro .container .intro .intro-content {
+      font-family: 'Gotham Rounded Book', 'Myriad Pro Regular', sans-serif;
+      text-align: center;
+      line-height: 30px;
+      max-width: 790px; }
+      .wr-intro .container .intro .intro-content span {
+        color: #353535; }
 
 h2 {
-  font-family: 'Gotham Rounded Medium', sans-serif;
+  font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
   font-size: 15px;
+  font-weight: 400;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #353535;
-  padding-top: 95px;
-  padding-bottom: 5px; }
-
-.creative-portfolio-content {
-  width: 730px;
-  text-align: center;
-  line-height: 30px;
-  font-family: 'Gotham Rounded Medium', sans-serif;
-  padding-bottom: 105px; }
-  .creative-portfolio-content span {
-    color: #353535; }
+  margin-bottom: 16px; }
 
 .decoration {
-  padding-bottom: 48px;
+  margin-bottom: 60px;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   width: 560px; }
   .decoration img:nth-child(2) {
-    margin: 5px 20px 0; }
+    margin: 5px 34px 0; }
 
-.love-what-u-do .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
-
-.love-what-u-do .love-what-you-do-content {
-  display: flex;
-  justify-content: center;
-  align-items: center; }
+.wr-features {
+  padding-top: 90px;
+  padding-bottom: 100px; }
+  .wr-features .features {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .wr-features .features .decoration {
+      margin-bottom: 86px; }
+  .wr-features .features-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+    @media screen and (max-width: 1024px) {
+      .wr-features .features-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; }
+        .wr-features .features-content .features-content-container {
+          padding-bottom: 30px; } }
 
 h3 {
-  font-family: 'Gotham Rounded Medium', sans-serif;
+  position: relative;
+  font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
   font-size: 15px;
+  font-weight: 400;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #353535;
-  padding-top: 31px; }
+  margin-bottom: 55px; }
+
+h3::before {
+  content: '';
+  position: absolute;
+  left: 40%;
+  bottom: -26px;
+  width: 30px;
+  height: 10px;
+  border-bottom: 4px solid #3dc9b3; }
 
 .icon-wrapper {
   display: flex;
@@ -168,86 +192,230 @@ h3 {
   align-items: center;
   width: 151px;
   height: 151px;
-  background-color: #3EC9B3;
-  border-radius: 50%; }
+  background-color: #3dc9b3;
+  border-radius: 50%;
+  margin-bottom: 35px; }
   .icon-wrapper i {
-    color: #ffffff; }
+    color: #fff; }
 
-.love-what-you-do-container {
+.features-content-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  font-family: 'Gotham Rounded Book', sans-serif;
-  padding-top: 40px;
-  padding-bottom: 100px; }
-  .love-what-you-do-container hr {
-    border: none;
-    width: 33px;
-    height: 2px;
-    background-color: #3EC9B3;
-    margin-bottom: 30px; }
-  .love-what-you-do-container p {
+  align-items: center; }
+  .features-content-container p {
+    font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
     line-height: 20px;
-    padding: 0 15px;
+    padding: 0 14px;
     text-align: center;
     margin: 0; }
 
-.wr-99-problem {
+.wr-advantages {
+  background-image: url("../assets/img/iPhone_5S@1X.png");
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position-x: 30%; }
+  .wr-advantages .container {
+    max-width: 100%; }
+    @media screen and (max-width: 1024px) {
+      .wr-advantages .container {
+        padding: 0; } }
+    .wr-advantages .container .iphone5 {
+      width: 46%;
+      display: inline-block; }
+      @media screen and (max-width: 375px) {
+        .wr-advantages .container .iphone5 {
+          display: none; } }
+    .wr-advantages .container .slider-iphone {
+      padding: 125px 360px 233px 107px; }
+      @media screen and (max-width: 1024px) {
+        .wr-advantages .container .slider-iphone {
+          padding: 0 30px 150px; } }
+
+.wr-slider {
+  width: 54%;
+  display: inline-block;
+  background-color: #fff;
+  position: relative; }
+  .wr-slider .slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .wr-slider .slide p {
+      font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: justify;
+      padding-bottom: 10px;
+      margin: 0; }
+  .wr-slider .slick-dots {
+    width: 50%;
+    bottom: 128px; }
+    @media screen and (max-width: 1024px) {
+      .wr-slider .slick-dots {
+        width: 100%;
+        bottom: 0; } }
+  .wr-slider .slick-dotted.slick-slider {
+    margin-bottom: 0; }
+  @media screen and (max-width: 1024px) {
+    .wr-slider {
+      width: 100%;
+      padding: 10px; } }
+
+.slick-dots li button:before {
+  content: '';
+  border: 2px solid #8c9398;
+  border-radius: 100%;
+  width: 10px;
+  height: 10px; }
+
+.slick-dots li.slick-active button:before {
+  background-color: #000; }
+
+.wr-quote {
   background-image: url("../assets/img/flower@1X.jpg");
   background-size: cover;
-  background-color: #242830;
   background-position: center center;
   background-repeat: no-repeat;
-  padding-top: 78px;
-  padding-bottom: 130px; }
-  .wr-99-problem .container {
-    position: relative; }
-    .wr-99-problem .container p {
+  padding-top: 25px;
+  padding-bottom: 50px;
+  position: relative; }
+  .wr-quote .container {
+    text-align: center; }
+    .wr-quote .container h4 {
       font-family: 'Gotham Rounded Book', sans-serif;
-      color: #ffffff;
-      text-align: center;
+      color: #fff;
       text-transform: uppercase;
-      padding-bottom: 15px; }
-    .wr-99-problem .container p:first-child {
       font-size: 40px;
-      letter-spacing: 10px; }
-    .wr-99-problem .container p + p {
+      letter-spacing: 10px;
+      margin-bottom: 36px; }
+    .wr-quote .container span {
       font-size: 25px;
       letter-spacing: 8px; }
-      .wr-99-problem .container p + p span {
-        font-style: italic; }
-    .wr-99-problem .container .smooth-scrolling {
-      position: absolute;
+    .wr-quote .container .smooth-scrolling {
+      display: inline-block;
       width: 44px;
       height: 44px;
       border-radius: 50%;
       text-decoration: none;
-      text-align: center;
       line-height: 44px;
-      color: #ffffff;
-      background-color: #3dc9b3;
-      cursor: pointer;
-      bottom: -65px;
-      left: 50%; }
+      color: #fff;
+      background-color: #3dc9b3; }
+  .wr-quote::before {
+    content: " ";
+    position: absolute;
+    background: #242830;
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 5; }
 
-.wr-ignite-your-passion {
+.dog-content {
+  text-align: center; }
+  .dog-content p {
+    font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0 9px; }
+  .dog-content img {
+    display: inline-block;
+    width: 360px;
+    height: 200px;
+    margin-bottom: 24px; }
+  .dog-content h3 {
+    margin-bottom: 50px; }
+  .dog-content h3:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    width: 30px;
+    height: 10px;
+    border-bottom: 3px solid #3dc9b3; }
+
+.dog-slider {
+  position: relative;
+  padding-top: 105px;
+  padding-bottom: 155px; }
+  .dog-slider .slick-dots {
+    bottom: 70px; }
+
+.wr-marketing {
   padding-top: 64px;
   padding-bottom: 59px;
   background-color: #242830; }
-  .wr-ignite-your-passion .container {
+  .wr-marketing .container {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center; }
-    .wr-ignite-your-passion .container a {
+    .wr-marketing .container a {
       font-size: 15px;
-      color: #ffffff;
+      color: #fff;
       padding: 32px 42px 25px;
-      border: 1px solid #ffffff;
+      border: 1px solid #fff;
       text-transform: uppercase;
       text-decoration: none;
       letter-spacing: 2px;
       transition: 0.5s; }
-    .wr-ignite-your-passion .container a:hover {
+    .wr-marketing .container a:hover {
+      border: 1px solid #3dc9b3;
+      background-color: #3dc9b3;
+      transition: 0.5s; }
+
+.wr-subscribe {
+  padding-top: 120px;
+  padding-bottom: 154px;
+  background-color: #242830;
+  background-image: url("../assets/img/keyboard@1X.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat; }
+  .wr-subscribe .container {
+    position: relative; }
+    .wr-subscribe .container .form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .wr-subscribe .container .form i {
+        color: #fff; }
+      .wr-subscribe .container .form h3 {
+        color: #fff;
+        margin-bottom: 43px; }
+      .wr-subscribe .container .form h3::before {
+        display: none; }
+    .wr-subscribe .container input {
+      padding: 22px;
+      width: 345px;
+      margin-right: 5px;
+      text-align: center;
+      font-family: 'Gotham Rounded MediumItalic', sans-serif;
+      font-size: 15px;
+      letter-spacing: 2px;
+      background-color: transparent;
+      color: #fff;
+      border: 1px solid #fff;
+      border-radius: 1px;
+      outline: none; }
+    .wr-subscribe .container form button.button {
       border: none;
-      background-color: #3dc9b3; }
+      box-shadow: none;
+      padding: 23px 22px;
+      border-radius: 1px;
+      margin: 0; }
+
+.hidden {
+  opacity: 0; }
+
+.fade-in {
+  animation: fadeIn ease 3s; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
