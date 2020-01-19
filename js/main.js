@@ -1,5 +1,13 @@
 $(document).ready(function () {
 
+  $('.menu').click(() => {
+    $('header, .menu').toggleClass('active');
+  });
+
+  $('header').click(() => {
+    $('header, .menu').toggleClass('active');
+  })
+
   $('.slider-iphone').slick({
     arrows: false,
     dots: true,
@@ -25,6 +33,7 @@ $(document).ready(function () {
         settings: {
           centerMode: true,
           slidesToShow: 1,
+          centerPadding: 0,
         }
       },
     ]
@@ -41,7 +50,7 @@ $(document).ready(function () {
         settings: {
           slidesToShow: 2,
           infinite: false,
-          dots: true
+          dots: true,
         }
       },
       {
@@ -49,6 +58,7 @@ $(document).ready(function () {
         settings: {
           centerMode: true,
           slidesToShow: 1,
+          centerPadding: 0,
         }
       },
     ]

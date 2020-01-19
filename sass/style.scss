@@ -32,14 +32,6 @@
     font-style: italic;
 }
 
-@font-face {
-    font-family: 'Myriad Pro Regular';
-    src: url('../assets/fonts/MyriadPro-Regular.eot');
-    src: url('../assets/fonts/MyriadPro-Regular.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/MyriadPro-Regular.woff2') format('woff2'), url('../assets/fonts/MyriadPro-Regular.woff') format('woff'), url('../assets/fonts/MyriadPro-Regular.ttf') format('truetype'), url('../assets/fonts/MyriadPro-Regular.svg#MyriadPro-Regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
 // variables
 $color-dark: #353535;
 $color-light: #8c9398;
@@ -72,7 +64,7 @@ $tablet: 1024px;
     & a {
         display: inline-block;
         text-decoration: none;
-        line-height: 40px;
+        line-height: 44px;
         width: 40px;
         height: 40px;
         border-radius: 50%;
@@ -117,38 +109,154 @@ p {
     height: 100vh;
 
     & .container {
+        & .menu {
+            & .bars {
+                display: block;
+            }
+
+            & .times {
+                display: none;
+            }
+
+            @media screen and (max-width: $mobile) {
+                @include flex-row();
+            
+
+                & .bars {
+                    right: unset;
+                }
+
+                & .times {
+                    display: none;
+                }
+            }
+        }
+
+        & .menu.active {
+            & .bars {
+                display: none;
+            }
+
+            & .times {
+                display: block;
+                position: absolute;
+                right: 300px;
+                top: 58px;
+                color: $color-dark;
+            }
+        }
+
+        .bars {
+            position: absolute;
+            right: 130px;
+            top: 60px;
+            color: $color-dark;
+        }
+
+        .bars:hover {
+            cursor: pointer;
+            fill: $color-accent;
+        }
+
+        .times:hover {
+            cursor: pointer;
+            fill: $color-accent;
+        }
+
+        h1 {
+            font-family: 'Gotham Rounded Book', sans-serif;
+            font-size: 40px;
+            text-transform: uppercase;
+            letter-spacing: 12px;
+            line-height: 1;
+            margin-bottom: 17px;
+
+            & span:first-child {
+                color: $color-dark;
+            }
+
+        }
+
         & .hero {
             display: flex;
             flex-direction: column;
             align-items: center;
             padding-top: 23vh;
         }
+
+        & header {
+            display: none;
+            position: absolute;
+            right: 0;
+
+            &.active {
+                display: block;
+            }
+
+            & .navigation {
+                & .nav-bar {
+                    background-color: $bg-color-dark;
+                    margin: 0;
+                    height: 100vh;
+                    z-index: 20;
+
+                    & li {
+                        list-style: none;
+                        border-bottom: 1px solid $bg-color-grey;
+                        margin-bottom: 30px;
+                        padding-right: 50px;
+
+                        &:first-child {
+                            padding-top: 30px;
+                        }
+
+                        & a {
+                            font-family: 'Gotham Rounded Book', sans-serif;
+                            text-transform: uppercase;
+                            text-decoration: none;
+                            color: $color-accent;
+
+                            &:hover {
+                                color: #fff;
+                            }  
+                        }
+                    }
+                }
+
+                
+            }
+
+            @media screen and (max-width: $mobile)  {
+                width: 100%;
+                height: 70vh;
+            }  
+        }
+
+        @media screen and (max-width: $mobile) {
+
+            & h1 {
+                font-size: 20px;
+            }
+        }
+    }
+
+    @media screen and (max-width: $mobile) {
+
+        & {
+            height: 70vh;
+        }
     }
 }
 
-h1 {
-    font-family: 'Gotham Rounded Book', 'Myriad Pro Regular', sans-serif;
-    font-size: 40px;
-    text-transform: uppercase;
-    letter-spacing: 12px;
-    line-height: 1;
-    margin-bottom: 17px;
-
-    & span:first-child {
-        color: $color-dark;
-    }
-
-}
 
 .description {
-    font-family: 'Gotham Rounded Book', 'Myriad Pro Regular', sans-serif;
+    font-family: 'Gotham Rounded Book', sans-serif;
     font-size: 15px;
     letter-spacing: 2px;
     margin-bottom: 16px;
 }
 
 .button {
-    font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
     font-size: 15px;
     color: #fff;
     background-color: $color-accent;
@@ -173,13 +281,6 @@ h1 {
     border-color: #309383;
 }
 
-.bars {
-    position: absolute;
-    right: 130px;
-    top: 60px;
-    color: $color-dark;
-}
-
 // INTRO
 
 .wr-intro {
@@ -192,7 +293,7 @@ h1 {
             @include flex-column ();
 
             & .intro-content {
-                font-family: 'Gotham Rounded Book', 'Myriad Pro Regular', sans-serif;
+                font-family: 'Gotham Rounded Book', sans-serif;
                 text-align: center;
                 line-height: 30px;
                 max-width: 790px;
@@ -203,17 +304,30 @@ h1 {
             }
         }
     }
+
+    @media screen and (max-width: $mobile) {
+        padding: 50px 0;
+
+        & h2 {
+            font-size: 12px;
+        }
+    }
 }
 
+
 h2 {
-    font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
     font-size: 15px;
-    font-weight: 400;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: $color-dark;
     margin-bottom: 16px;
+
+    @media screen and (max-width: $mobile) {
+        font-size: 12px;
+        text-align: center;
+    }
 }
+
 
 .decoration {
     margin-bottom: 60px;
@@ -222,6 +336,9 @@ h2 {
 
     & img:nth-child(2) {
         margin: 5px 34px 0;
+    }
+    @media screen and (max-width: $mobile) {
+        margin-bottom: 15px;
     }
 }
 
@@ -250,11 +367,14 @@ h2 {
             }
         }
     }
+
+    @media screen and (max-width: $mobile) {
+        padding: 40px 0;
+    }
 }
 
 h3 {
     position: relative;
-    font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
     font-size: 15px;
     font-weight: 400;
     letter-spacing: 2px;
@@ -282,6 +402,12 @@ h3::before {
     border-radius: 50%;
     margin-bottom: 35px;
 
+    @media screen and (max-width: $mobile) {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+    }
+
     & i {
         color: #fff;
     }
@@ -291,7 +417,6 @@ h3::before {
     @include flex-column ();
 
     & p {
-        font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
         line-height: 20px;
         padding: 0 14px;
         text-align: center;
@@ -324,16 +449,19 @@ h3::before {
         }
 
         & .slider-iphone {
-            padding: 125px 360px 233px 107px;
+            padding: 125px 300px 165px 107px;
 
             @media screen and (max-width: $tablet) {
                 padding: 0 30px 150px;
+            
             }
         }
     }
+
+    @media screen and (max-width: $mobile) {
+        padding: 0;
+    }
 }
-
-
 
 .wr-slider {
     width: 54%;
@@ -345,7 +473,6 @@ h3::before {
         @include flex-column ();
 
         & p {
-            font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
             font-size: 14px;
             line-height: 20px;
             text-align: justify;
@@ -360,7 +487,8 @@ h3::before {
 
         @media screen and (max-width: $tablet) {
             width: 100%;
-            bottom: 0;
+            bottom: 85px;
+            left: 0;
         }
     }
 
@@ -390,9 +518,7 @@ h3::before {
 
 .wr-quote {
     background-image: url('../assets/img/flower@1X.jpg');
-    // background-size: cover;
     background-position: center center;
-    // background-repeat: no-repeat;
     padding-top: 25px;
     padding-bottom: 50px;
     position: relative;
@@ -408,11 +534,20 @@ h3::before {
             font-size: 40px;
             letter-spacing: 10px;
             margin-bottom: 36px;
+
+            @media screen and (max-width: $mobile) {
+                font-size: 20px;
+                margin-bottom: 25px;
+            }
         }
 
         & span {
             font-size: 25px;
             letter-spacing: 8px;
+
+            @media screen and (max-width: $mobile) {
+                font-size: 15px;
+            }
         }
 
         .smooth-scrolling {
@@ -441,7 +576,7 @@ h3::before {
         display: block;
         // background-image: linear-gradient (to top, $bg-color-dark);
         background-color: $bg-color-dark;
-        opacity: .5;
+        opacity: .7;
         top: 0;
         left: 0;
         height: 100%;
@@ -454,10 +589,16 @@ h3::before {
 .services-slider {
     position: relative;
     padding-top: 105px;
-    padding-bottom: 155px;
+    padding-bottom: 140px;
 
     & .slick-dots {
         bottom: 70px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        padding: 60px 0 120px;
+        margin-right: 25px;
+        // padding-right: 25px;
     }
 }
 
@@ -478,9 +619,9 @@ h3::before {
         position: relative;
         width: 360px;
         height: 200px;
+        margin-bottom: 40px;
 
         & p {
-            font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
             font-size: 14px;
             line-height: 20px;
             padding: 0 9px;
@@ -494,7 +635,7 @@ h3::before {
         }
 
         & h3 {
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         &:hover .slide-overlay {
@@ -558,6 +699,11 @@ h3::before {
             text-decoration: none;
             letter-spacing: 2px;
             transition: 0.5s;
+
+            @media screen and (max-width: $mobile) {
+                font-size: 10px;
+                padding: 22px 32px 15px;
+            }
         }
 
         & a:hover {
@@ -571,7 +717,14 @@ h3::before {
 // TEAM
 
 .wr-team {
+    padding-top: 75px;
+    padding-bottom: 180px;
+
     & .container {
+
+        & .slick-dots {
+            bottom: -100px;
+        }
 
         & .content-wrapper-team {
             @include flex-column();
@@ -581,6 +734,32 @@ h3::before {
         & .team-slide {
             @include flex-column();
 
+            & h3 {
+                margin-bottom: 50px;
+            }
+
+            & p {
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            & .poligon {
+                position: relative;
+                text-align: center;
+                margin: 0 auto;
+                width: 60%;
+                max-width: 200px;
+                margin-bottom: 30px;
+
+                &::after {
+                    content: " ";
+                    display: block;
+                }
+
+                & img {
+                    clip-path: polygon(40% 7.679490000000001%,43.1596% 6.206149999999994%,46.52704% 5.303839999999994%,50% 5%,53.47296% 5.303839999999994%,56.8404% 6.206149999999994%,60% 7.679490000000001%,81.65064% 20.179490000000005%,84.50639% 22.179109999999998%,86.97152% 24.644250000000003%,88.97114% 27.500000000000004%,90.44449% 30.6596%,91.34679% 34.02704%,91.65064% 37.5%,91.65064% 62.5%,91.34679% 65.97296%,90.44449% 69.3404%,88.97114% 72.5%,86.97152% 75.35575%,84.50639% 77.82089%,81.65064% 79.82051%,60% 92.32051%,56.8404% 93.79384999999999%,53.47296% 94.69615999999999%,50% 95%,46.52704% 94.69615999999999%,43.1596% 93.79384999999999%,40% 92.32051%,18.349359999999997% 79.82051%,15.493610000000004% 77.82088999999999%,13.028480000000002% 75.35575%,11.028860000000002% 72.5%,9.555509999999998% 69.34039999999999%,8.653210000000001% 65.97296%,8.349360000000004% 62.5%,8.349360000000004% 37.5%,8.653210000000001% 34.02704%,9.555509999999998% 30.659599999999994%,11.028860000000002% 27.499999999999996%,13.028480000000002% 24.644249999999996%,15.493610000000004% 22.17910999999999%,18.349360000000004% 20.179489999999998%);
+                }
+            }
             & .social-links {
                 @include social-links();
             }
@@ -594,7 +773,7 @@ h3::before {
 .wr-subscribe {
     position: relative;
     padding-top: 120px;
-    padding-bottom: 154px;
+    padding-bottom: 165px;
     text-align: center;
     background-color: $bg-color-dark;
     background-image: url('../assets/img/keyboard@1X.jpg');
@@ -635,6 +814,12 @@ h3::before {
             border: 1px solid #fff;
             border-radius: 1px;
             outline: none;
+
+            @media screen and (max-width: $mobile) {
+                padding: 15px;
+                width: 200px;
+                margin-bottom: 10px;
+            }
         }
 
         & input:focus {
@@ -648,16 +833,22 @@ h3::before {
                 padding: 23px 22px;
                 border-radius: 1px;
                 margin: 0;
+
+                @media screen and (max-width: $mobile) {
+                    padding: 16px;
+                }
             }
         }
 
+        @media screen and (max-width: $mobile) {
+            padding: 50px 0;
+        }
     }
 
     &::before {
         content: '';
         position: absolute;
         display: block;
-        // background-image: linear-gradient (to top, $bg-color-dark);
         background-color: $bg-color-dark;
         opacity: .5;
         top: 0;
@@ -688,6 +879,12 @@ h3::before {
     .smooth-scrolling:hover {
         background-color: #29ad97;
     }
+
+    @media screen and (max-width: $mobile) {
+        padding: 50px 0;
+    
+    }
+
 }
 
 // CONTACTS
@@ -696,6 +893,11 @@ h3::before {
     background-color: $bg-color-grey;
     padding-top: 112px;
     padding-bottom: 112px;
+
+    @media screen and (max-width: $tablet) {
+        padding: 50px 0;
+    
+    }
 
     & .container {
         & .contacts-content {
@@ -712,13 +914,26 @@ h3::before {
             justify-content: space-between;
             margin-bottom: 100px;
 
+            @media screen and (max-width: $tablet) {
+                @include flex-column();
+                justify-content: space-between;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
             & .contact {
                 @include flex-column();
                 font-size: 14px;
                 background: #fff;
                 width: 360px;
                 padding-top: 30px;
-                padding-bottom: 30px;
+                padding-bottom: 30px;                
+
+                @media screen and (max-width: $tablet) {
+                    margin-bottom: 15px;
+                    width: 280px;
+                    border: 1px solid $color-accent;
+                }
 
                 & .icon {
                     fill: #000;
@@ -747,8 +962,13 @@ h3::before {
         display: flex;
         justify-content: space-between;
         font-family: 'Gotham Rounded Book', sans-serif;
-        font-size: 14px;
         letter-spacing: 1;
+
+        @media screen and (max-width: $mobile) {
+            @include flex-column();
+            font-size: 10px;
+            line-height: 20px;
+        }
 
         & span {
             color: #fff;

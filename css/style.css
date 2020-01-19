@@ -27,13 +27,6 @@
   font-weight: normal;
   font-style: italic; }
 
-@font-face {
-  font-family: 'Myriad Pro Regular';
-  src: url("../assets/fonts/MyriadPro-Regular.eot");
-  src: url("../assets/fonts/MyriadPro-Regular.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/MyriadPro-Regular.woff2") format("woff2"), url("../assets/fonts/MyriadPro-Regular.woff") format("woff"), url("../assets/fonts/MyriadPro-Regular.ttf") format("truetype"), url("../assets/fonts/MyriadPro-Regular.svg#MyriadPro-Regular") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
 body {
   font-family: 'Gotham Rounded Medium', sans-serif;
   color: #8c9398;
@@ -55,30 +48,96 @@ p {
   background-image: url("../assets/img/hero@1X.jpg");
   background-size: cover;
   height: 100vh; }
+  .wr-hero .container .menu .bars {
+    display: block; }
+  .wr-hero .container .menu .times {
+    display: none; }
+  @media screen and (max-width: 375px) {
+    .wr-hero .container .menu {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center; }
+      .wr-hero .container .menu .bars {
+        right: unset; }
+      .wr-hero .container .menu .times {
+        display: none; } }
+  .wr-hero .container .menu.active .bars {
+    display: none; }
+  .wr-hero .container .menu.active .times {
+    display: block;
+    position: absolute;
+    right: 300px;
+    top: 58px;
+    color: #353535; }
+  .wr-hero .container .bars {
+    position: absolute;
+    right: 130px;
+    top: 60px;
+    color: #353535; }
+  .wr-hero .container .bars:hover {
+    cursor: pointer;
+    fill: #3dc9b3; }
+  .wr-hero .container .times:hover {
+    cursor: pointer;
+    fill: #3dc9b3; }
+  .wr-hero .container h1 {
+    font-family: 'Gotham Rounded Book', sans-serif;
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 12px;
+    line-height: 1;
+    margin-bottom: 17px; }
+    .wr-hero .container h1 span:first-child {
+      color: #353535; }
   .wr-hero .container .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 23vh; }
-
-h1 {
-  font-family: 'Gotham Rounded Book', 'Myriad Pro Regular', sans-serif;
-  font-size: 40px;
-  text-transform: uppercase;
-  letter-spacing: 12px;
-  line-height: 1;
-  margin-bottom: 17px; }
-  h1 span:first-child {
-    color: #353535; }
+  .wr-hero .container header {
+    display: none;
+    position: absolute;
+    right: 0; }
+    .wr-hero .container header.active {
+      display: block; }
+    .wr-hero .container header .navigation .nav-bar {
+      background-color: #242830;
+      margin: 0;
+      height: 100vh;
+      z-index: 20; }
+      .wr-hero .container header .navigation .nav-bar li {
+        list-style: none;
+        border-bottom: 1px solid #f3f5f8;
+        margin-bottom: 30px;
+        padding-right: 50px; }
+        .wr-hero .container header .navigation .nav-bar li:first-child {
+          padding-top: 30px; }
+        .wr-hero .container header .navigation .nav-bar li a {
+          font-family: 'Gotham Rounded Book', sans-serif;
+          text-transform: uppercase;
+          text-decoration: none;
+          color: #3dc9b3; }
+          .wr-hero .container header .navigation .nav-bar li a:hover {
+            color: #fff; }
+    @media screen and (max-width: 375px) {
+      .wr-hero .container header {
+        width: 100%;
+        height: 70vh; } }
+  @media screen and (max-width: 375px) {
+    .wr-hero .container h1 {
+      font-size: 20px; } }
+  @media screen and (max-width: 375px) {
+    .wr-hero {
+      height: 70vh; } }
 
 .description {
-  font-family: 'Gotham Rounded Book', 'Myriad Pro Regular', sans-serif;
+  font-family: 'Gotham Rounded Book', sans-serif;
   font-size: 15px;
   letter-spacing: 2px;
   margin-bottom: 16px; }
 
 .button {
-  font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
   font-size: 15px;
   color: #fff;
   background-color: #3dc9b3;
@@ -100,12 +159,6 @@ h1 {
   box-shadow: none;
   border-color: #309383; }
 
-.bars {
-  position: absolute;
-  right: 130px;
-  top: 60px;
-  color: #353535; }
-
 .wr-intro {
   background-color: #f3f5f8;
   padding-top: 95px;
@@ -116,21 +169,28 @@ h1 {
     justify-content: center;
     align-items: center; }
     .wr-intro .container .intro .intro-content {
-      font-family: 'Gotham Rounded Book', 'Myriad Pro Regular', sans-serif;
+      font-family: 'Gotham Rounded Book', sans-serif;
       text-align: center;
       line-height: 30px;
       max-width: 790px; }
       .wr-intro .container .intro .intro-content span {
         color: #353535; }
+  @media screen and (max-width: 375px) {
+    .wr-intro {
+      padding: 50px 0; }
+      .wr-intro h2 {
+        font-size: 12px; } }
 
 h2 {
-  font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
   font-size: 15px;
-  font-weight: 400;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #353535;
   margin-bottom: 16px; }
+  @media screen and (max-width: 375px) {
+    h2 {
+      font-size: 12px;
+      text-align: center; } }
 
 .decoration {
   margin-bottom: 60px;
@@ -141,6 +201,9 @@ h2 {
   width: 560px; }
   .decoration img:nth-child(2) {
     margin: 5px 34px 0; }
+  @media screen and (max-width: 375px) {
+    .decoration {
+      margin-bottom: 15px; } }
 
 .wr-features {
   padding-top: 90px;
@@ -165,10 +228,12 @@ h2 {
         align-items: center; }
         .wr-features .features-content .features-content-container {
           padding-bottom: 30px; } }
+  @media screen and (max-width: 375px) {
+    .wr-features {
+      padding: 40px 0; } }
 
 h3 {
   position: relative;
-  font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
   font-size: 15px;
   font-weight: 400;
   letter-spacing: 2px;
@@ -195,6 +260,11 @@ h3::before {
   background-color: #3dc9b3;
   border-radius: 50%;
   margin-bottom: 35px; }
+  @media screen and (max-width: 375px) {
+    .icon-wrapper {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 20px; } }
   .icon-wrapper i {
     color: #fff; }
 
@@ -204,7 +274,6 @@ h3::before {
   justify-content: center;
   align-items: center; }
   .features-content-container p {
-    font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
     line-height: 20px;
     padding: 0 14px;
     text-align: center;
@@ -227,10 +296,13 @@ h3::before {
         .wr-advantages .container .iphone5 {
           display: none; } }
     .wr-advantages .container .slider-iphone {
-      padding: 125px 360px 233px 107px; }
+      padding: 125px 300px 165px 107px; }
       @media screen and (max-width: 1024px) {
         .wr-advantages .container .slider-iphone {
           padding: 0 30px 150px; } }
+  @media screen and (max-width: 375px) {
+    .wr-advantages {
+      padding: 0; } }
 
 .wr-slider {
   width: 54%;
@@ -243,7 +315,6 @@ h3::before {
     justify-content: center;
     align-items: center; }
     .wr-slider .slide p {
-      font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
       font-size: 14px;
       line-height: 20px;
       text-align: justify;
@@ -255,7 +326,8 @@ h3::before {
     @media screen and (max-width: 1024px) {
       .wr-slider .slick-dots {
         width: 100%;
-        bottom: 0; } }
+        bottom: 85px;
+        left: 0; } }
   .wr-slider .slick-dotted.slick-slider {
     margin-bottom: 0; }
   @media screen and (max-width: 1024px) {
@@ -289,9 +361,16 @@ h3::before {
       font-size: 40px;
       letter-spacing: 10px;
       margin-bottom: 36px; }
+      @media screen and (max-width: 375px) {
+        .wr-quote .container h4 {
+          font-size: 20px;
+          margin-bottom: 25px; } }
     .wr-quote .container span {
       font-size: 25px;
       letter-spacing: 8px; }
+      @media screen and (max-width: 375px) {
+        .wr-quote .container span {
+          font-size: 15px; } }
     .wr-quote .container .smooth-scrolling {
       display: inline-block;
       width: 44px;
@@ -310,7 +389,7 @@ h3::before {
     position: absolute;
     display: block;
     background-color: #242830;
-    opacity: .5;
+    opacity: .7;
     top: 0;
     left: 0;
     height: 100%;
@@ -319,9 +398,13 @@ h3::before {
 .services-slider {
   position: relative;
   padding-top: 105px;
-  padding-bottom: 155px; }
+  padding-bottom: 140px; }
   .services-slider .slick-dots {
     bottom: 70px; }
+  @media screen and (max-width: 375px) {
+    .services-slider {
+      padding: 60px 0 120px;
+      margin-right: 25px; } }
 
 .services-slide {
   text-align: center; }
@@ -336,9 +419,9 @@ h3::before {
   .services-slide .wrapper-overlay {
     position: relative;
     width: 360px;
-    height: 200px; }
+    height: 200px;
+    margin-bottom: 40px; }
     .services-slide .wrapper-overlay p {
-      font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
       font-size: 14px;
       line-height: 20px;
       padding: 0 9px; }
@@ -348,7 +431,7 @@ h3::before {
       height: 200px;
       margin-bottom: 50px; }
     .services-slide .wrapper-overlay h3 {
-      margin-bottom: 50px; }
+      margin-bottom: 40px; }
     .services-slide .wrapper-overlay:hover .slide-overlay {
       display: block;
       top: 0;
@@ -400,42 +483,67 @@ h3::before {
       text-decoration: none;
       letter-spacing: 2px;
       transition: 0.5s; }
+      @media screen and (max-width: 375px) {
+        .wr-marketing .container a {
+          font-size: 10px;
+          padding: 22px 32px 15px; } }
     .wr-marketing .container a:hover {
       border: 1px solid #3dc9b3;
       background-color: #3dc9b3;
       transition: 0.5s; }
 
-.wr-team .container .content-wrapper-team {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
-
-.wr-team .container .team-slide {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
-  .wr-team .container .team-slide .social-links {
-    text-align: center; }
-    .wr-team .container .team-slide .social-links a {
-      display: inline-block;
-      text-decoration: none;
-      line-height: 40px;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: #242830;
-      margin: 0 10px; }
-      .wr-team .container .team-slide .social-links a svg {
-        fill: #fff; }
-    .wr-team .container .team-slide .social-links a:hover {
-      background-color: #3dc9b3; }
+.wr-team {
+  padding-top: 75px;
+  padding-bottom: 180px; }
+  .wr-team .container .slick-dots {
+    bottom: -100px; }
+  .wr-team .container .content-wrapper-team {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  .wr-team .container .team-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .wr-team .container .team-slide h3 {
+      margin-bottom: 50px; }
+    .wr-team .container .team-slide p {
+      margin-bottom: 20px;
+      text-align: center; }
+    .wr-team .container .team-slide .poligon {
+      position: relative;
+      text-align: center;
+      margin: 0 auto;
+      width: 60%;
+      max-width: 200px;
+      margin-bottom: 30px; }
+      .wr-team .container .team-slide .poligon::after {
+        content: " ";
+        display: block; }
+      .wr-team .container .team-slide .poligon img {
+        clip-path: polygon(40% 7.67949%, 43.1596% 6.20615%, 46.52704% 5.30384%, 50% 5%, 53.47296% 5.30384%, 56.8404% 6.20615%, 60% 7.67949%, 81.65064% 20.17949%, 84.50639% 22.17911%, 86.97152% 24.64425%, 88.97114% 27.5%, 90.44449% 30.6596%, 91.34679% 34.02704%, 91.65064% 37.5%, 91.65064% 62.5%, 91.34679% 65.97296%, 90.44449% 69.3404%, 88.97114% 72.5%, 86.97152% 75.35575%, 84.50639% 77.82089%, 81.65064% 79.82051%, 60% 92.32051%, 56.8404% 93.79385%, 53.47296% 94.69616%, 50% 95%, 46.52704% 94.69616%, 43.1596% 93.79385%, 40% 92.32051%, 18.34936% 79.82051%, 15.49361% 77.82089%, 13.02848% 75.35575%, 11.02886% 72.5%, 9.55551% 69.3404%, 8.65321% 65.97296%, 8.34936% 62.5%, 8.34936% 37.5%, 8.65321% 34.02704%, 9.55551% 30.6596%, 11.02886% 27.5%, 13.02848% 24.64425%, 15.49361% 22.17911%, 18.34936% 20.17949%); }
+    .wr-team .container .team-slide .social-links {
+      text-align: center; }
+      .wr-team .container .team-slide .social-links a {
+        display: inline-block;
+        text-decoration: none;
+        line-height: 44px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #242830;
+        margin: 0 10px; }
+        .wr-team .container .team-slide .social-links a svg {
+          fill: #fff; }
+      .wr-team .container .team-slide .social-links a:hover {
+        background-color: #3dc9b3; }
 
 .wr-subscribe {
   position: relative;
   padding-top: 120px;
-  padding-bottom: 154px;
+  padding-bottom: 165px;
   text-align: center;
   background-color: #242830;
   background-image: url("../assets/img/keyboard@1X.jpg");
@@ -469,6 +577,11 @@ h3::before {
       border: 1px solid #fff;
       border-radius: 1px;
       outline: none; }
+      @media screen and (max-width: 375px) {
+        .wr-subscribe .container input {
+          padding: 15px;
+          width: 200px;
+          margin-bottom: 10px; } }
     .wr-subscribe .container input:focus {
       border: 1px solid #3dc9b3; }
     .wr-subscribe .container form button.button {
@@ -477,6 +590,12 @@ h3::before {
       padding: 23px 22px;
       border-radius: 1px;
       margin: 0; }
+      @media screen and (max-width: 375px) {
+        .wr-subscribe .container form button.button {
+          padding: 16px; } }
+    @media screen and (max-width: 375px) {
+      .wr-subscribe .container {
+        padding: 50px 0; } }
   .wr-subscribe::before {
     content: '';
     position: absolute;
@@ -504,11 +623,17 @@ h3::before {
       fill: #fff; }
   .wr-subscribe .smooth-scrolling:hover {
     background-color: #29ad97; }
+  @media screen and (max-width: 375px) {
+    .wr-subscribe {
+      padding: 50px 0; } }
 
 .wr-contacts {
   background-color: #f3f5f8;
   padding-top: 112px;
   padding-bottom: 112px; }
+  @media screen and (max-width: 1024px) {
+    .wr-contacts {
+      padding: 50px 0; } }
   .wr-contacts .container .contacts-content {
     display: flex;
     flex-direction: column;
@@ -520,7 +645,7 @@ h3::before {
     .wr-contacts .container .social-links a {
       display: inline-block;
       text-decoration: none;
-      line-height: 40px;
+      line-height: 44px;
       width: 40px;
       height: 40px;
       border-radius: 50%;
@@ -537,6 +662,15 @@ h3::before {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 100px; }
+    @media screen and (max-width: 1024px) {
+      .wr-contacts .container .cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 20px; } }
     .wr-contacts .container .cards .contact {
       display: flex;
       flex-direction: column;
@@ -547,6 +681,11 @@ h3::before {
       width: 360px;
       padding-top: 30px;
       padding-bottom: 30px; }
+      @media screen and (max-width: 1024px) {
+        .wr-contacts .container .cards .contact {
+          margin-bottom: 15px;
+          width: 280px;
+          border: 1px solid #3dc9b3; } }
       .wr-contacts .container .cards .contact .icon {
         fill: #000;
         margin-bottom: 20px; }
@@ -564,8 +703,15 @@ h3::before {
     display: flex;
     justify-content: space-between;
     font-family: 'Gotham Rounded Book', sans-serif;
-    font-size: 14px;
     letter-spacing: 1; }
+    @media screen and (max-width: 375px) {
+      .wr-footer .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+        line-height: 20px; } }
     .wr-footer .container span {
       color: #fff; }
       .wr-footer .container span span {
