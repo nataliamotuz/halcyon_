@@ -66,6 +66,29 @@ $tablet: 1024px;
     align-items: center;
 }
 
+@mixin social-links () {
+    text-align: center;
+
+    & a {
+        display: inline-block;
+        text-decoration: none;
+        line-height: 40px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: $bg-color-dark;
+        margin: 0 10px;
+
+        & svg {
+            fill: #fff;
+        }
+    }
+
+    & a:hover {
+        background-color: $color-accent;
+    }
+}
+
 body {
     font-family: 'Gotham Rounded Medium', sans-serif;
     color: $color-light;
@@ -367,15 +390,16 @@ h3::before {
 
 .wr-quote {
     background-image: url('../assets/img/flower@1X.jpg');
-    background-size: cover;
+    // background-size: cover;
     background-position: center center;
-    background-repeat: no-repeat;
+    // background-repeat: no-repeat;
     padding-top: 25px;
     padding-bottom: 50px;
     position: relative;
 
     & .container {
         text-align: center;
+        position: relative;
 
         & h4 {
             font-family: 'Gotham Rounded Book', sans-serif;
@@ -397,48 +421,48 @@ h3::before {
             height: 44px;
             border-radius: 50%;
             text-decoration: none;
-            line-height: 44px;
+            line-height: 64px;
             color: #fff;
             background-color: $color-accent;
+
+            & svg {
+                fill: #fff;
+            }
+        }
+
+        .smooth-scrolling:hover {
+            background-color: #29ad97;
         }
     }
 
     &::before {
-        content: " ";
+        content: '';
         position: absolute;
-        background: $bg-color-dark;
-        opacity: 0.2;
+        display: block;
+        // background-image: linear-gradient (to top, $bg-color-dark);
+        background-color: $bg-color-dark;
+        opacity: .5;
         top: 0;
         left: 0;
-        bottom: 0;
-        right: 0;
-        z-index: 5;
+        height: 100%;
+        width: 100%;
     }
-
 }
 
 // SERVISES
 
-.dog-content {
+.services-slider {
+    position: relative;
+    padding-top: 105px;
+    padding-bottom: 155px;
+
+    & .slick-dots {
+        bottom: 70px;
+    }
+}
+
+.services-slide {
     text-align: center;
-
-    & p {
-        font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
-        font-size: 14px;
-        line-height: 20px;
-        padding: 0 9px;
-    }
-
-    & img {
-        display: inline-block;
-        width: 360px;
-        height: 200px;
-        margin-bottom: 24px;
-    }
-
-    & h3 {
-        margin-bottom: 50px;
-    }
 
     & h3:before {
         content: '';
@@ -449,15 +473,69 @@ h3::before {
         height: 10px;
         border-bottom: 3px solid $color-accent;
     }
-}
 
-.dog-slider {
-    position: relative;
-    padding-top: 105px;
-    padding-bottom: 155px;
+    & .wrapper-overlay {
+        position: relative;
+        width: 360px;
+        height: 200px;
 
-    & .slick-dots {
-        bottom: 70px;
+        & p {
+            font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+            padding: 0 9px;
+        }
+
+        & img {
+            display: inline-block;
+            width: 360px;
+            height: 200px;
+            margin-bottom: 50px;
+        }
+
+        & h3 {
+            margin-bottom: 50px;
+        }
+
+        &:hover .slide-overlay {
+            display: block;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            @include flex-column();
+
+            & svg {
+                fill: #fff;
+                margin-bottom: 10px;
+                z-index: 10;
+            }
+
+            & a {
+                text-decoration: none;
+                text-transform: uppercase;
+                color: #fff;
+                z-index: 10;
+            }
+        }
+
+        & .slide-overlay {
+            position: absolute;
+            display: none;
+
+            &::before {
+                content: '';
+                position: absolute;
+                display: block;
+                background-color: $color-accent;
+                opacity: .5;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+            }
+
+        }
     }
 }
 
@@ -490,11 +568,34 @@ h3::before {
     }
 }
 
+// TEAM
+
+.wr-team {
+    & .container {
+
+        & .content-wrapper-team {
+            @include flex-column();
+        }
+
+
+        & .team-slide {
+            @include flex-column();
+
+            & .social-links {
+                @include social-links();
+            }
+        }
+    }
+}
+
+
 // SUBSCRIBE
 
 .wr-subscribe {
+    position: relative;
     padding-top: 120px;
     padding-bottom: 154px;
+    text-align: center;
     background-color: $bg-color-dark;
     background-image: url('../assets/img/keyboard@1X.jpg');
     background-position: center center;
@@ -507,8 +608,8 @@ h3::before {
         & .form {
             @include flex-column();
 
-            & i {
-                color: #fff;
+            & svg {
+                fill: #fff;
             }
 
             & h3 {
@@ -536,6 +637,10 @@ h3::before {
             outline: none;
         }
 
+        & input:focus {
+            border: 1px solid $color-accent;
+        }
+
         & form {
             & button.button {
                 border: none;
@@ -545,8 +650,124 @@ h3::before {
                 margin: 0;
             }
         }
+
     }
 
+    &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        // background-image: linear-gradient (to top, $bg-color-dark);
+        background-color: $bg-color-dark;
+        opacity: .5;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    & .smooth-scrolling {
+        display: inline-block;
+        position: absolute;
+        bottom: -20px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        text-decoration: none;
+        line-height: 60px;
+        text-align: center;
+        color: #fff;
+        background-color: $color-accent;
+        margin-left: -20px;
+
+        & svg {
+            fill: #fff;
+        }
+    }
+
+    .smooth-scrolling:hover {
+        background-color: #29ad97;
+    }
+}
+
+// CONTACTS
+
+.wr-contacts {
+    background-color: $bg-color-grey;
+    padding-top: 112px;
+    padding-bottom: 112px;
+
+    & .container {
+        & .contacts-content {
+            @include flex-column();
+            margin-bottom: 35px;
+        }
+
+        & .social-links {
+            @include social-links();
+        }
+
+        & .cards {
+            @include flex-row();
+            justify-content: space-between;
+            margin-bottom: 100px;
+
+            & .contact {
+                @include flex-column();
+                font-size: 14px;
+                background: #fff;
+                width: 360px;
+                padding-top: 30px;
+                padding-bottom: 30px;
+
+                & .icon {
+                    fill: #000;
+                    margin-bottom: 20px;
+                }
+
+                & .type-contact {
+                    text-transform: uppercase;
+                    color: $color-accent;
+                    margin-bottom: 25px;
+                }
+            }
+        }
+    }
+}
+
+//  FOOTER
+
+.wr-footer {
+    background-color: $color-dark;
+    padding-top: 55px;
+    padding-bottom: 50px;
+
+    & .container {
+        background-color: $color-dark;
+        display: flex;
+        justify-content: space-between;
+        font-family: 'Gotham Rounded Book', sans-serif;
+        font-size: 14px;
+        letter-spacing: 1;
+
+        & span {
+            color: #fff;
+
+            & span {
+                color: $color-light;
+            }
+        }
+
+        & .footer-link {
+            text-decoration: none;
+            color: $color-light;
+        }
+
+        & .footer-link:hover {
+            text-decoration: underline;
+            color: $color-accent;
+        }
+    }
 }
 
 // waypoints

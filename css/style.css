@@ -275,14 +275,13 @@ h3::before {
 
 .wr-quote {
   background-image: url("../assets/img/flower@1X.jpg");
-  background-size: cover;
   background-position: center center;
-  background-repeat: no-repeat;
   padding-top: 25px;
   padding-bottom: 50px;
   position: relative; }
   .wr-quote .container {
-    text-align: center; }
+    text-align: center;
+    position: relative; }
     .wr-quote .container h4 {
       font-family: 'Gotham Rounded Book', sans-serif;
       color: #fff;
@@ -299,35 +298,34 @@ h3::before {
       height: 44px;
       border-radius: 50%;
       text-decoration: none;
-      line-height: 44px;
+      line-height: 64px;
       color: #fff;
       background-color: #3dc9b3; }
+      .wr-quote .container .smooth-scrolling svg {
+        fill: #fff; }
+    .wr-quote .container .smooth-scrolling:hover {
+      background-color: #29ad97; }
   .wr-quote::before {
-    content: " ";
+    content: '';
     position: absolute;
-    background: #242830;
-    opacity: 0.2;
+    display: block;
+    background-color: #242830;
+    opacity: .5;
     top: 0;
     left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 5; }
+    height: 100%;
+    width: 100%; }
 
-.dog-content {
+.services-slider {
+  position: relative;
+  padding-top: 105px;
+  padding-bottom: 155px; }
+  .services-slider .slick-dots {
+    bottom: 70px; }
+
+.services-slide {
   text-align: center; }
-  .dog-content p {
-    font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
-    font-size: 14px;
-    line-height: 20px;
-    padding: 0 9px; }
-  .dog-content img {
-    display: inline-block;
-    width: 360px;
-    height: 200px;
-    margin-bottom: 24px; }
-  .dog-content h3 {
-    margin-bottom: 50px; }
-  .dog-content h3:before {
+  .services-slide h3:before {
     content: '';
     position: absolute;
     left: 50%;
@@ -335,13 +333,54 @@ h3::before {
     width: 30px;
     height: 10px;
     border-bottom: 3px solid #3dc9b3; }
-
-.dog-slider {
-  position: relative;
-  padding-top: 105px;
-  padding-bottom: 155px; }
-  .dog-slider .slick-dots {
-    bottom: 70px; }
+  .services-slide .wrapper-overlay {
+    position: relative;
+    width: 360px;
+    height: 200px; }
+    .services-slide .wrapper-overlay p {
+      font-family: 'Gotham Rounded Medium', 'Myriad Pro Regular', sans-serif;
+      font-size: 14px;
+      line-height: 20px;
+      padding: 0 9px; }
+    .services-slide .wrapper-overlay img {
+      display: inline-block;
+      width: 360px;
+      height: 200px;
+      margin-bottom: 50px; }
+    .services-slide .wrapper-overlay h3 {
+      margin-bottom: 50px; }
+    .services-slide .wrapper-overlay:hover .slide-overlay {
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .services-slide .wrapper-overlay:hover .slide-overlay svg {
+        fill: #fff;
+        margin-bottom: 10px;
+        z-index: 10; }
+      .services-slide .wrapper-overlay:hover .slide-overlay a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #fff;
+        z-index: 10; }
+    .services-slide .wrapper-overlay .slide-overlay {
+      position: absolute;
+      display: none; }
+      .services-slide .wrapper-overlay .slide-overlay::before {
+        content: '';
+        position: absolute;
+        display: block;
+        background-color: #3dc9b3;
+        opacity: .5;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%; }
 
 .wr-marketing {
   padding-top: 64px;
@@ -366,9 +405,38 @@ h3::before {
       background-color: #3dc9b3;
       transition: 0.5s; }
 
+.wr-team .container .content-wrapper-team {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.wr-team .container .team-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .wr-team .container .team-slide .social-links {
+    text-align: center; }
+    .wr-team .container .team-slide .social-links a {
+      display: inline-block;
+      text-decoration: none;
+      line-height: 40px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #242830;
+      margin: 0 10px; }
+      .wr-team .container .team-slide .social-links a svg {
+        fill: #fff; }
+    .wr-team .container .team-slide .social-links a:hover {
+      background-color: #3dc9b3; }
+
 .wr-subscribe {
+  position: relative;
   padding-top: 120px;
   padding-bottom: 154px;
+  text-align: center;
   background-color: #242830;
   background-image: url("../assets/img/keyboard@1X.jpg");
   background-position: center center;
@@ -381,8 +449,8 @@ h3::before {
       flex-direction: column;
       justify-content: center;
       align-items: center; }
-      .wr-subscribe .container .form i {
-        color: #fff; }
+      .wr-subscribe .container .form svg {
+        fill: #fff; }
       .wr-subscribe .container .form h3 {
         color: #fff;
         margin-bottom: 43px; }
@@ -401,12 +469,113 @@ h3::before {
       border: 1px solid #fff;
       border-radius: 1px;
       outline: none; }
+    .wr-subscribe .container input:focus {
+      border: 1px solid #3dc9b3; }
     .wr-subscribe .container form button.button {
       border: none;
       box-shadow: none;
       padding: 23px 22px;
       border-radius: 1px;
       margin: 0; }
+  .wr-subscribe::before {
+    content: '';
+    position: absolute;
+    display: block;
+    background-color: #242830;
+    opacity: .5;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%; }
+  .wr-subscribe .smooth-scrolling {
+    display: inline-block;
+    position: absolute;
+    bottom: -20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    text-decoration: none;
+    line-height: 60px;
+    text-align: center;
+    color: #fff;
+    background-color: #3dc9b3;
+    margin-left: -20px; }
+    .wr-subscribe .smooth-scrolling svg {
+      fill: #fff; }
+  .wr-subscribe .smooth-scrolling:hover {
+    background-color: #29ad97; }
+
+.wr-contacts {
+  background-color: #f3f5f8;
+  padding-top: 112px;
+  padding-bottom: 112px; }
+  .wr-contacts .container .contacts-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 35px; }
+  .wr-contacts .container .social-links {
+    text-align: center; }
+    .wr-contacts .container .social-links a {
+      display: inline-block;
+      text-decoration: none;
+      line-height: 40px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #242830;
+      margin: 0 10px; }
+      .wr-contacts .container .social-links a svg {
+        fill: #fff; }
+    .wr-contacts .container .social-links a:hover {
+      background-color: #3dc9b3; }
+  .wr-contacts .container .cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 100px; }
+    .wr-contacts .container .cards .contact {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      background: #fff;
+      width: 360px;
+      padding-top: 30px;
+      padding-bottom: 30px; }
+      .wr-contacts .container .cards .contact .icon {
+        fill: #000;
+        margin-bottom: 20px; }
+      .wr-contacts .container .cards .contact .type-contact {
+        text-transform: uppercase;
+        color: #3dc9b3;
+        margin-bottom: 25px; }
+
+.wr-footer {
+  background-color: #353535;
+  padding-top: 55px;
+  padding-bottom: 50px; }
+  .wr-footer .container {
+    background-color: #353535;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Gotham Rounded Book', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1; }
+    .wr-footer .container span {
+      color: #fff; }
+      .wr-footer .container span span {
+        color: #8c9398; }
+    .wr-footer .container .footer-link {
+      text-decoration: none;
+      color: #8c9398; }
+    .wr-footer .container .footer-link:hover {
+      text-decoration: underline;
+      color: #3dc9b3; }
 
 .hidden {
   opacity: 0; }

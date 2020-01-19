@@ -6,7 +6,31 @@ $(document).ready(function () {
     slidesToShow: 1,
   });
 
-  $('.dog-slider').slick({
+  $('.services-slider').slick({
+    arrows: false,
+    dots: true,
+    infinite: false,
+    slidesToShow: 3,
+    responsive: [
+      {
+        breakpoint: 1124,
+        settings: {
+          slidesToShow: 2,
+          infinite: false,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          centerMode: true,
+          slidesToShow: 1,
+        }
+      },
+    ]
+  });
+
+  $('.team-slider').slick({
     arrows: false,
     dots: true,
     infinite: false,
@@ -71,7 +95,7 @@ $(document).ready(function () {
   });
 
   new Waypoint({
-    element: document.querySelector('.wr-servises'),
+    element: document.querySelector('.wr-services'),
     handler(direction) {
       $(this.element)
         .addClass('fade-in')
@@ -91,13 +115,33 @@ $(document).ready(function () {
   });
 
   new Waypoint({
+    element: document.querySelector('.wr-contacts'),
+    handler(direction) {
+      $(this.element)
+        .addClass('fade-in')
+        .removeClass('hidden');
+    },
+    offset: '50%',
+  });
+
+  new Waypoint({
+    element: document.querySelector('.wr-team'),
+    handler(direction) {
+      $(this.element)
+        .addClass('fade-in')
+        .removeClass('hidden');
+    },
+    offset: '50%',
+  });
+
+  new Waypoint({
     element: document.querySelector('.wr-subscribe'),
     handler(direction) {
       $(this.element)
         .addClass('fade-in')
         .removeClass('hidden');
     },
-    offset: '75%',
+    offset: '50%',
   });
 
 });
