@@ -71,7 +71,7 @@ $(document).ready(function () {
         .addClass('fade-in')
         .removeClass('hidden');
     },
-    offset: '50%',
+    offset: '70%',
   });
 
   new Waypoint({
@@ -81,7 +81,7 @@ $(document).ready(function () {
         .addClass('fade-in')
         .removeClass('hidden');
     },
-    offset: '50%',
+    offset: '70%',
   });
 
   new Waypoint({
@@ -91,7 +91,7 @@ $(document).ready(function () {
         .addClass('fade-in')
         .removeClass('hidden');
     },
-    offset: '50%',
+    offset: '70%',
   });
 
   new Waypoint({
@@ -101,7 +101,7 @@ $(document).ready(function () {
         .addClass('fade-in')
         .removeClass('hidden');
     },
-    offset: '50%',
+    offset: '70%',
   });
 
   new Waypoint({
@@ -111,7 +111,7 @@ $(document).ready(function () {
         .addClass('fade-in')
         .removeClass('hidden');
     },
-    offset: '50%',
+    offset: '70%',
   });
 
   new Waypoint({
@@ -121,7 +121,7 @@ $(document).ready(function () {
         .addClass('fade-in')
         .removeClass('hidden');
     },
-    offset: '50%',
+    offset: '70%',
   });
 
   new Waypoint({
@@ -131,7 +131,7 @@ $(document).ready(function () {
         .addClass('fade-in')
         .removeClass('hidden');
     },
-    offset: '50%',
+    offset: '70%',
   });
 
   new Waypoint({
@@ -141,7 +141,7 @@ $(document).ready(function () {
         .addClass('fade-in')
         .removeClass('hidden');
     },
-    offset: '50%',
+    offset: '70%',
   });
 
   new Waypoint({
@@ -151,7 +151,7 @@ $(document).ready(function () {
         .addClass('fade-in')
         .removeClass('hidden');
     },
-    offset: '50%',
+    offset: '70%',
   });
 
 });
